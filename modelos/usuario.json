@@ -1,0 +1,142 @@
+[
+    {
+    "Senha":"123456",
+    "Matricula": "000001",
+    "Situacao": "ativo",
+    "Nome": "Jovelino da cunha",
+    "DataAdmissao": "23-05-2018",
+    "Batidas": [
+      {
+        "DataHora": "23-05-2018-07:02",
+        "Tipo": "Entrada"
+      },
+      {
+        "DataHora": "23-05-2018-12:00",
+        "Tipo": "Saida"
+      },
+      {
+        "DataHora": "23-05-2018-13:00",
+        "Tipo": "Entrada"
+      }
+    ],
+    "Folhas": [
+        {
+            "Funcao":"Orelha Seca",
+            "SalarioHora":10.00,
+            "SalarioBase":1000.00,
+            "MesPeriodo":"Maio",
+            "AnoPeriodo":"2018",
+            "TipoContracheque":"mensal",
+            "Departamento":"Desenvolvimento",
+            "CentroDeCusto":"TI",
+            "FGTS":200.00,
+            "Empresa":{
+                "RazaoSocial":"Vagabundos Anônimos da TI",
+                "CNPJ":"99999999000129",
+                "Logotipo":"logo"
+            },
+            "ItensFolha":[
+                {
+                   "Vencimentos":10.0,
+                   "Referencia":"Vai saber",
+                   "Descontos":1.00,
+                   "CodItem":"codigo3",
+                   "Descricao":"Extra" 
+                },
+                {
+                    "Vencimentos":10.0,
+                    "Referencia":"Vai saber",
+                    "Descontos":1.00,
+                    "CodItem":"codigo3",
+                    "Descricao":"Gambiarras" 
+                 },
+                 {
+                    "Vencimentos":0.0,
+                    "Referencia":"Vai saber",
+                    "Descontos":100.00,
+                    "CodItem":"codigo3",
+                    "Descricao":"Chora!" 
+                 },
+                 {
+                    "Vencimentos":10.0,
+                    "Referencia":"Vai saber",
+                    "Descontos":1.00,
+                    "CodItem":"codigo3",
+                    "Descricao":"Item XPTO" 
+                 }
+            ]
+
+        }
+    ]
+  },
+  {
+    "Senha":"123456",
+    "Matricula": "000002",
+    "Situacao": "ativo",
+    "Nome": "Alisandro Cresce",
+    "DataAdmissao": "23-05-2018",
+    "Batidas": [
+      {
+        "DataHora": "23-05-2018-07:02",
+        "Tipo": "Entrada"
+      },
+      {
+        "DataHora": "23-05-2018-12:00",
+        "Tipo": "Saida"
+      },
+      {
+        "DataHora": "23-05-2018-13:00",
+        "Tipo": "Entrada"
+      }
+    ],
+    "Folhas": [
+        {
+            "Funcao":"Severino",
+            "SalarioHora":10.00,
+            "SalarioBase":1000.00,
+            "MesPeriodo":"Maio",
+            "AnoPeriodo":"2018",
+            "TipoContracheque":"mensal",
+            "Departamento":"Desenvolvimento",
+            "CentroDeCusto":"TI",
+            "FGTS":200.00,
+            "Empresa":{
+                "RazaoSocial":"Vagabundos Anônimos da TI",
+                "CNPJ":"99999999000129",
+                "Logotipo":"logo"
+            },
+            "ItensFolha":[
+                {
+                   "Vencimentos":10.0,
+                   "Referencia":"Vai saber",
+                   "Descontos":1.00,
+                   "CodItem":"codigo3",
+                   "Descricao":"Extra" 
+                },
+                {
+                    "Vencimentos":10.0,
+                    "Referencia":"Vai saber",
+                    "Descontos":1.00,
+                    "CodItem":"codigo3",
+                    "Descricao":"Gambiarras" 
+                 },
+                 {
+                    "Vencimentos":0.0,
+                    "Referencia":"Vai saber",
+                    "Descontos":100.00,
+                    "CodItem":"codigo3",
+                    "Descricao":"Chora!" 
+                 },
+                 {
+                    "Vencimentos":10.0,
+                    "Referencia":"Vai saber",
+                    "Descontos":1.00,
+                    "CodItem":"codigo3",
+                    "Descricao":"Item XPTO" 
+                 }
+            ]
+
+        }
+    ]
+  }
+]
