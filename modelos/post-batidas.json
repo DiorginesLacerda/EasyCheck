@@ -1,0 +1,87 @@
+{"20180501-20180505":[
+    {
+    "DataHora":"01-05-2018-07:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"01-05-2018-12:00",
+    "Tipo":"Saida"
+    },
+    {
+    "DataHora":"01-05-2018-13:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"01-05-2018-17:00",
+    "Tipo":"Saida"
+    },
+    
+    {
+    "DataHora":"02-05-2018-07:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"02-05-2018-12:00",
+    "Tipo":"Saida"
+    },
+    {
+    "DataHora":"02-05-2018-13:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"02-05-2018-17:00",
+    "Tipo":"Saida"
+    },
+    
+    {
+    "DataHora":"03-05-2018-07:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"03-05-2018-12:00",
+    "Tipo":"Saida"
+    },
+    {
+    "DataHora":"03-05-2018-13:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"04-05-2018-17:00",
+    "Tipo":"Saida"
+    },
+    
+    {
+    "DataHora":"04-05-2018-07:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"04-05-2018-12:00",
+    "Tipo":"Saida"
+    },
+    {
+    "DataHora":"04-05-2018-13:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"04-05-2018-17:00",
+    "Tipo":"Saida"
+    },
+    
+    {
+    "DataHora":"05-05-2018-07:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"05-05-2018-12:00",
+    "Tipo":"Saida"
+    },
+    {
+    "DataHora":"05-05-2018-13:00",
+    "Tipo":"Entrada"
+    },
+    {
+    "DataHora":"05-05-2018-17:00",
+    "Tipo":"Saida"
+    }
+]
+}

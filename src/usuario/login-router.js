@@ -11,20 +11,20 @@ var model = require("./usuario-model");
 var Usuario = db.mongoose.model("usuarios", model.usuarioSchema);
 
 /*Login*/
-router.post("/login", (req, res, next) => {
-  var db = require("../repositories/db");
-  var Usuario = db.mongoose.model("usuarios", db.usuarioSchema);
-  const _matricula = req.body.usuario;
-  const _senha = req.body.senha;
+router.post("/", (req, res, next) => {
+  const _matricula = req.body.Usuario;
+  const _senha = req.body.Senha;
 
   //Busca usuário no banco pela matrícula
   Usuario.findOne({ Matricula: _matricula }).lean().exec(function(e, doc) {
     //Verifica se encontrou o usuário
     if (doc) {
+      console.log(doc)
       var user = new Usuario(doc);
       //Verifica se a senha bate
       if (_senha == user.Senha) {
-        const _logo = user.Folhas[0].Empresa.Logotipo;
+        
+        const _logo = user.LogotipoEmpresa;
         //Busca logotipo no storage
         fs.readFile(`./public/images/${_logo}.png`, (e, data) => {
           if (e) {
@@ -33,11 +33,11 @@ router.post("/login", (req, res, next) => {
           } else {
             //converte o logotipo para base64
             const imgB64 = new Buffer(data).toString("base64");
-
             const response = {
               Nome: user.Nome,
               Situacao: user.Situacao,
-              LogoEmpresa: imgB64
+              DataAdmissao: user.DataAdmissao,
+              LogoEmpresa: imgB64,
             };
             res.json(response);
             res.end();

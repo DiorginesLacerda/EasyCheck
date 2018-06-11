@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var itemFolhaSchema = new mongoose.Schema({
-    Vencimentos:Number,
+    Valor:Number,
     Referencia:String,
-    Descontos:Number,
+    Acao:String,//Proventos ou Descontos
     CodItem:String,
     Descricao:String
 });

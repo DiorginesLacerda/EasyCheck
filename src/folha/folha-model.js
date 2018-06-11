@@ -1,6 +1,21 @@
 var mongoose = require('mongoose');
+var empresaSchema = require('../empresa/empresa-model')
+
+var itemFolhaSchema = new mongoose.Schema({
+    Valor:Number,
+    Referencia:String,
+    Acao:String,//Proventos ou Descontos
+    CodItem:String,
+    Descricao:String
+});
 
 var folhaSchema = new mongoose.Schema({
+    Usuario:{
+        _id:String,
+        Nome: String,
+        Matricula:String,
+        //Verificar se necessita de mais algum campo de usuário
+    },
     Funcao:String,
     SalarioHora:Number,
     SalarioBase:Number,
@@ -10,8 +25,9 @@ var folhaSchema = new mongoose.Schema({
     Departamento:String,
     CentroDeCusto:String,
     FGTS:Number,
-    Empresa:{},
-    ItensFolha:[]
-});
+    Empresa:{empresaSchema},//Verificar os dados que se precisa da empresa no contracheque
+    ItensFolha:[itemFolhaSchema]
+    },{ collection: 'folhas' }
+);
 
-module.exports = { folhaSchema };
+module.exports = { folhaSchema,itemFolhaSchema };

@@ -6,9 +6,8 @@ var usuarioSchema = new mongoose.Schema({
     Senha: String,
     Matricula:String,
     Situacao:String,
-    DataAdmissao:String,//deve udar para Data assim que for possível
-    Batidas:[],
-    Folhas:[]
+    DataAdmissao:Date,
+    LogotipoEmpresa:String
 }, { collection: 'usuarios' }
 );
 
