@@ -34,6 +34,7 @@ router.post("/", (req, res, next) => {
             //converte o logotipo para base64
             const imgB64 = new Buffer(data).toString("base64");
             const response = {
+              Id:user._id,
               Nome: user.Nome,
               Situacao: user.Situacao,
               DataAdmissao: user.DataAdmissao,
