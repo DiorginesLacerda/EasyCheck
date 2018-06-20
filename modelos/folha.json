@@ -1,0 +1,21 @@
+{ "Usuario":{
+            "Id":"",
+            "Nome": "",
+            "Matricula":""
+        },
+        "Funcao":"",
+        "SalarioHora":"",
+        "SalarioBase":"req.body.SalarioBase",
+        "MesPeriodo":"req.body.MesPeriodo",
+        "AnoPeriodo":"req.body.AnoPeriodo",
+        "TipoContracheque":"req.body.TipoContracheque",
+        "Departamento":"req.body.Departamento",
+        "CentroDeCusto":"req.body.CentroDeCusto",
+        "FGTS":"req.body.FGTS",
+        "Empresa":{
+            "RazaoSocia":"req.body.Empresa.RazaoSocial",
+            "CNPJ":"req.body.Empresa.CNPJ",
+            "Logotipo":"req.body.Empresa.Logotipo"
+        },
+        "ItensFolha":"itens"
+}

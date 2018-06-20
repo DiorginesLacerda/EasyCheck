@@ -5,6 +5,19 @@ var model = require("./folha-model");
 var Folha = db.mongoose.model("folhas", model.folhaSchema);
 var ItemFolha = db.mongoose.model('itens-folha',model.itemFolhaSchema);
 
+/*GET all */
+router.get("/", (req, res, next) => {
+  console.log('Achou o serviço')
+  Folha.find({}).lean().exec((e, docs) => {
+    if (e) {
+      res.json(e);
+      res.end();
+    }
+    res.json(docs);
+    res.end();
+  });
+});
+
 /*GET todas do usuário */
 router.get("/:id", (req, res, next) => {
   Folha.find({ "Usuario._id": req.params.id }).lean().exec((e, docs) => {
@@ -16,6 +29,8 @@ router.get("/:id", (req, res, next) => {
     res.end();
   });
 });
+
+
 
 /*POST retorna por período por usuário */
 router.get("/:id", (req, res, next) => {
