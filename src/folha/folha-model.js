@@ -14,7 +14,6 @@ var folhaSchema = new mongoose.Schema({
         _id:String,
         Nome: String,
         Matricula:String,
-        //Verificar se necessita de mais algum campo de usuário
     },
     Funcao:String,
     SalarioHora:Number,

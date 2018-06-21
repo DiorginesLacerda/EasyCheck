@@ -20,6 +20,7 @@ router.get("/", (req, res, next) => {
 
 /*GET todas do usuário */
 router.get("/:id", (req, res, next) => {
+
   Folha.find({ "Usuario._id": req.params.id }).lean().exec((e, docs) => {
     if (e) {
       res.json(e);
@@ -33,14 +34,11 @@ router.get("/:id", (req, res, next) => {
 
 
 /*POST retorna por período por usuário */
-router.get("/:id", (req, res, next) => {
-  const userId = req.params.id;
-  const dataIn = new Date(req.body.dataInicial);
-  const dataFinal = new Date(req.body.dataFinal);
+router.post("/:id", (req, res, next) => {
   Folha.find({
-    "Usuario._id": userId,
-    DataHora: { $gte: dataIn },
-    DataHora: { $lte: dataFinal }
+    "Usuario._id": req.params.id,
+    MesPeriodo: req.body.MesPeriodo,
+    AnoPeriodo: req.body.AnoPeriodo
   })
     .lean()
     .exec((e, docs) => {
@@ -68,7 +66,7 @@ router.post('/', (req,res,next)=>{
 
     var novaFolha = new Folha({
         Usuario:{
-            _id:req.body.Usuario.id,
+            _id:req.body.Usuario.Id,
             Nome: req.body.Usuario.Nome,
             Matricula:req.body.Usuario.Matricula,
             //Verificar se necessita de mais algum campo de usuário
@@ -89,13 +87,14 @@ router.post('/', (req,res,next)=>{
         },
         ItensFolha:itens
     })
+    console.log(novaFolha)
     novaFolha.save(e=>{
       if(e){
         res.status(500).json({ error: e.message });
         res.end();
         return;
       }
-      res.json(novaBatida);
+      res.json(novaFolha);
       res.end();
     })
   })
