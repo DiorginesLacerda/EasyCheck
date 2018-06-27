@@ -82,8 +82,7 @@ router.post('/', (req,res,next)=>{
         FGTS:req.body.FGTS,
         Empresa:{
           RazaoSocial:req.body.Empresa.RazaoSocial,
-          CNPJ:req.body.Empresa.CNPJ,
-          Logotipo:req.body.Empresa.Logotipo
+          CNPJ:req.body.Empresa.CNPJ
         },
         ItensFolha:itens
     })
