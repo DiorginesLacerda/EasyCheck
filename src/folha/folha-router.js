@@ -2,8 +2,10 @@ var express = require("express");
 var router = express.Router();
 var db = require("../../db");
 var model = require("./folha-model");
+var EmpresaModel = require("../empresa/empresa-model")
 var Folha = db.mongoose.model("folhas", model.folhaSchema);
 var ItemFolha = db.mongoose.model('itens-folha',model.itemFolhaSchema);
+var Empresa = db.mongoose.model('empresas',EmpresaModel.empresaSchema)
 
 /*GET all */
 router.get("/", (req, res, next) => {
@@ -39,7 +41,7 @@ router.post("/:id", (req, res, next) => {
     "Usuario._id": req.params.id,
     MesPeriodo: req.body.MesPeriodo,
     AnoPeriodo: req.body.AnoPeriodo
-  })
+  },{Usuario:0,_id:0,__v:0,'ItensFolha._id':0})
     .lean()
     .exec((e, docs) => {
       if (e) {
@@ -53,7 +55,6 @@ router.post("/:id", (req, res, next) => {
 
 /*POST Cria nova */
 router.post('/', (req,res,next)=>{
-
     var itens = (req.body.ItensFolha).map(item =>{
         return new ItemFolha({
             Valor:item.Valor,
@@ -69,7 +70,6 @@ router.post('/', (req,res,next)=>{
             _id:req.body.Usuario.Id,
             Nome: req.body.Usuario.Nome,
             Matricula:req.body.Usuario.Matricula,
-            //Verificar se necessita de mais algum campo de usuário
         },
         Funcao:req.body.Funcao,
         SalarioHora:req.body.SalarioHora,
@@ -81,13 +81,13 @@ router.post('/', (req,res,next)=>{
         CentroDeCusto:req.body.CentroDeCusto,
         FGTS:req.body.FGTS,
         Empresa:{
-            RazaoSocial:req.body.Empresa.RazaoSocial,
-            CNPJ:req.body.Empresa.CNPJ,
-            Logotipo:req.body.Empresa.Logotipo
+          RazaoSocial:req.body.Empresa.RazaoSocial,
+          CNPJ:req.body.Empresa.CNPJ,
+          Logotipo:req.body.Empresa.Logotipo
         },
         ItensFolha:itens
     })
-    console.log(novaFolha)
+
     novaFolha.save(e=>{
       if(e){
         res.status(500).json({ error: e.message });
@@ -98,5 +98,23 @@ router.post('/', (req,res,next)=>{
       res.end();
     })
   })
+
+/*DELETE One */
+router.delete('/:id',(req,res,next)=>{
+  Folha.findByIdAndRemove(req.params.id, (e,data)=>{
+    if(e){
+      res.status(500).json({ error: e.message });
+      res.end();
+      return;
+    }
+    if(!data){
+      res.status(400).json({ error: 'Id não encontrado' });
+      res.end();
+      return;
+    }
+    res.json({success:true});
+    res.end();
+  })
+})
 
 module.exports = router;

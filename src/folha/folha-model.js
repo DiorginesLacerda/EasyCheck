@@ -24,7 +24,11 @@ var folhaSchema = new mongoose.Schema({
     Departamento:String,
     CentroDeCusto:String,
     FGTS:Number,
-    Empresa:{empresaSchema},//Verificar os dados que se precisa da empresa no contracheque
+    Empresa:{
+        RazaoSocial:String,
+        CNPJ:String,
+        Logotipo:String
+    },//Verificar os dados que se precisa da empresa no contracheque
     ItensFolha:[itemFolhaSchema]
     },{ collection: 'folhas' }
 );

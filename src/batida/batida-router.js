@@ -30,7 +30,7 @@ router.get("/:id", (req, res, next) => {
 router.post("/:id", (req, res, next)=> {
   const userId = req.params.id;
   var dataIn = new Date(req.body.DataInicial);
-  const dataFinal = new Date(req.body.DataFinal);
+  const dataFinal = new Date(`${req.body.DataFinal}T23:59:59`);
   Batida.find({
     "Usuario._id": req.params.id,
      DataHora: { $gte: dataIn },
