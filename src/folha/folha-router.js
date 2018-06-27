@@ -39,7 +39,7 @@ router.get("/:id", (req, res, next) => {
 router.post("/:id", (req, res, next) => {
   Folha.find({
     "Usuario._id": req.params.id,
-    Tipo:req.body.Tipo,
+    TipoContracheque:req.body.Tipo,
     MesPeriodo: req.body.MesPeriodo,
     AnoPeriodo: req.body.AnoPeriodo
   },{Usuario:0,_id:0,__v:0,'ItensFolha._id':0})
