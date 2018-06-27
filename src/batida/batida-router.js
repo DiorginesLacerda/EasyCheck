@@ -33,8 +33,8 @@ router.post("/:id", (req, res, next)=> {
   const dataFinal = new Date(`${req.body.DataFinal}T23:59:59`);
   Batida.find({
     "Usuario._id": req.params.id,
-     DataHora: { $gte: dataIn },
-     DataHora: { $lte: dataFinal }
+    DataHora: { $gte: dataIn },
+    DataHora: { $lte: dataFinal }
   },{Usuario:0,_id:0,__v:0})
     .lean()
     .exec((e, docs) => {
@@ -42,7 +42,14 @@ router.post("/:id", (req, res, next)=> {
         res.json(e);
         res.end();
       }
-      res.json(docs);
+      const relatorio = ({
+        Empresa:{
+          RazaoSocial:"TipoGoogle",//Não possível porque o esquema de dados precisa ser refeito
+          CNPJ:"12.123.123/0001-12"
+        },
+        Batidas:docs
+      })
+      res.json(relatorio);
       res.end();
     });
 });
