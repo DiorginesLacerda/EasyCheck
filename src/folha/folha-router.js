@@ -37,7 +37,7 @@ router.get("/:id", (req, res, next) => {
 
 /*POST retorna por período por usuário */
 router.post("/:id", (req, res, next) => {
-  Folha.find({
+  Folha.findOne({
     "Usuario._id": req.params.id,
     TipoContracheque:req.body.Tipo,
     MesPeriodo: req.body.MesPeriodo,
