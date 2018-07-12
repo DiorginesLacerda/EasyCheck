@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "node ./tests/* | tap-spec"
+    "test": "node ./tests/index.test | tap-spec"
   },
   "dependencies": {
     "base-64": "^0.1.0",
